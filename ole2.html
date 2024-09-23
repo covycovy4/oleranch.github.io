@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ole Ranch - Nature's Fresh Fusion</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Lato', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fefae0;
+            color: #283618;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #606c38;
+            color: white;
+        }
+
+        header img {
+            height: 80px; /* Adjusted size */
+        }
+
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 80vh; /* Full viewport height */
+            overflow: hidden;
+        }
+
+        nav {
+            display: flex;
+        }
+
+        nav a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #fefae0;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #dda15e;
+        }
+        /* Dropdown Menu */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #606c38;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #dda15e;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 80vh; /* Full viewport height */
+            overflow: hidden;
+        }
+
+        .hero img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .hero h1 {
+            position: absolute;
+            bottom: 150px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Playfair Display', serif;
+            font-size: 60px;
+            color: white;
+            margin: 0;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            position: absolute;
+            bottom: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+            color: white;
+            margin: 0;
+            text-align: center;
+        }
+
+        .hero button {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #bc6c25;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .hero button:hover {
+            background-color: #dda15e;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 20px;
+            text-align: center;
+            background-color: #fefae0;
+        }
+
+        .features h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            color: #283618;
+            margin-bottom: 40px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .feature-card {
+            padding: 20px;
+            background-color: white;
+            border: 1px solid #606c38;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .feature-card h3 {
+            font-size: 24px;
+            color: #bc6c25;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            font-size: 16px;
+            color: #606c38;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 80px 20px;
+            background-color: #283618;
+            color: white;
+        }
+
+        .testimonials h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            margin-bottom: 40px;
+        }
+
+        .testimonial-card {
+            text-align: center;
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #606c38;
+            background-color: #606c38;
+            color: #fefae0;
+            border-radius: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #606c38;
+            padding: 40px;
+            text-align: center;
+            color: #fefae0;
+        }
+
+        footer a {
+            color: #dda15e;
+            text-decoration: none;
+        }
+
+        footer p {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+   <header>
+   <img src="/home/tsidzo/Desktop/ole farm ranch/logo.png" alt="Ole Ranch Logo">
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About Us</a>
+        
+        <!-- Wrap the dropdown inside a container div -->
+        <div class="dropdown"> 
+            <a href="#" class="dropbtn">Products</a>
+            <div class="dropdown-content">
+                <a href="honey.html">Honey</a>
+                <a href="biltong.html">Biltong</a>
+                <a href="plant-based-foods.html">Plant Based Foods</a>
+                <a href="dried-fruits.html">Dried Fruits</a>
+                <a href="nuts-and-seeds.html">Nuts and Seeds</a>
+                <a href="#">More...</a>
+            </div>
+        </div>
+
+        <a href="#">Wellness Hub</a>
+        <a href="#">Contact</a>
+    </nav>
+</header>
+
+    <section class="hero">
+        <img src="https://plus.unsplash.com/premium_photo-1664527305901-a3c8bec62850?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cHJvZHVjZXxlbnwwfDB8MHx8fDA%3D" alt="cornfield">
+        <img src="https://images.unsplash.com/photo-1417689842201-866e0d91e736?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHx8" alt="honeybee">
+        <img src="https://images.unsplash.com/photo-1661137162009-030ab010ed65?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8b3JjaGFyZHN8ZW58MHwwfDB8fHww" alt="orchard">
+        <img src="https://plus.unsplash.com/premium_photo-1663945779273-ebc45569fb9f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHdoZWF0JTIwZmllbGR8ZW58MHwwfDB8fHww" alt="wheat">
+        <img src="https://images.unsplash.com/photo-1658902748005-4a1c2ca3e148?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGNvcm4lMjBmaWVsZHxlbnwwfDB8MHx8fDA%3D" alt="Market">
+        <img src="https://images.unsplash.com/photo-1592704708371-7bf1b1a19d6f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmxhY2slMjBwZXJzb24lMjBkb2luZyUyMHlvZ2F8ZW58MHwwfDB8fHww" alt="yoga">
+        <img src="https://images.unsplash.com/photo-1495837174058-628aafc7d610?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGFmcmljYW4lMjBwZW9wbGUlMjBvbiUyMGElMjBwaWNuaWN8ZW58MHwwfDB8fHww" alt="Slideshow Image 7">
+        <h1>Nature's Fresh Fusion</h1>
+        <p>Empowering young people through nutrition, health, and wellness.</p>
+        <button>Learn More</button>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <h2>Our Products</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h3>Natural Honey</h3>
+                <p>Harvested sustainably from our eco-friendly beekeeping practices.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Biltong</h3>
+                <p>Delicious dried meat, rich in natural flavors and high in protein.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Fresh Vegetables</h3>
+                <p>Organically grown vegetables to promote health and wellness.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <h2>Customer Reviews</h2>
+        <div class="testimonial-card">
+            <p>"Ole Ranch's honey is the best I've ever tasted! Their dedication to natural and healthy products is unmatched."</p>
+            <p>- Sarah J.</p>
+        </div>
+        <div class="testimonial-card">
+            <p>"The biltong from Ole Ranch is a must-try. It's flavorful, healthy, and always fresh!"</p>
+            <p>- Michael T.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Ole Ranch - Nature's Fresh Fusion. All Rights Reserved.</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
+
+    <script>
+        // JavaScript for Slideshow
+        const images = document.querySelectorAll('.hero img');
+        let currentIndex = 0;
+
+        function showNextImage() {
+            images[currentIndex].style.opacity = 0;
+            currentIndex = (currentIndex + 1) % images.length;
+            images[currentIndex].style.opacity = 1;
+        }
+
+        images[currentIndex].style.opacity = 1;
+        setInterval(showNextImage, 3000); // Change image every 3 seconds
+    </script>
+
+</body>
+
+</html>
+
